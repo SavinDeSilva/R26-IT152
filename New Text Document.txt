@@ -1,0 +1,12 @@
+cd D:\ceylon\ceylon\backend
+.\.venv\Scripts\activate
+python run.py
+
+
+
+
+
+
+cd d:\ceylon\ceylon\frontend
+npm install
+npm run install:all

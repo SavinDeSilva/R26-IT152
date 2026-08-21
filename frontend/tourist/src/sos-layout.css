@@ -1,0 +1,50 @@
+.sos-page {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.4rem 0 2.4rem;
+}
+
+.sos-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sos-types {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.sos-nav-inner {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media (max-width: 820px) {
+  .sos-tiles,
+  .sos-types {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .sos-nav-inner {
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+
+  .sos-types {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sos-tiles {
+    grid-template-columns: 1fr;
+  }
+}

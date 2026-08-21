@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour Ceylon | Ayurveda Wellness Matcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<div id="pageBgLayer"></div>
+<div id="pageBgTint"></div>
+
+<nav>
+  <div class="nav-brand"><div class="dot" style="overflow:hidden;background:white;"><img src="images/logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><span>TOUR CEYLON</span></div>
+  <div class="nav-links">
+    <a class="active" href="#">Wellness Matcher</a>
+    <a href="#" onclick="showMapView(); return false;">Map</a>
+    <a href="#" onclick="showLanguageView(); return false;">&#127760; Language</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div id="heroBgLayer"></div>
+  <div class="hero-overlay"></div>
+  <div class="botanical-texture"></div>
+  <div class="hero-grid">
+    <div>
+      <div id="heroEyebrow" style="color:var(--teal-light); font-size:0.8rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:10px;">Tour Ceylon &middot; Wellness &amp; Retreats</div>
+      <h1 id="heroHeading">Welcome to Sri Lanka Wellness</h1>
+      <p id="heroTagline" style="font-size:1.1rem; margin-bottom:6px;">Ayurveda treatment or a meditation retreat &mdash; find your match.</p>
+      <p id="heroBody">A research-backed matching engine connecting tourists to verified Ayurvedic treatment centers and meditation retreats across Sri Lanka &mdash; personalized to what you're looking for.</p>
+      <div class="stats-row">
+        <div class="stat"><div class="num">83</div><div class="lbl">Centers</div></div>
+        <div class="stat"><div class="num">37</div><div class="lbl">Medical</div></div>
+        <div class="stat"><div class="num">32</div><div class="lbl">Wellness</div></div>
+        <div class="stat"><div class="num">14</div><div class="lbl">Spiritual</div></div>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div id="heroSteps">
+        <div class="step-line"><div class="n">1</div> Choose Ayurveda treatment or a meditation retreat</div>
+        <div class="step-line"><div class="n">2</div> Tell us a bit about what you're looking for</div>
+        <div class="step-line"><div class="n">3</div> Get matched to verified centers instantly</div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); margin-top:14px; padding-top:14px; font-size:0.82rem; color:rgba(255,255,255,0.7);">
+        Already know where you want to go? <a href="#" onclick="goBrowse(); return false;" style="color:var(--teal-light); font-weight:600;">Browse all 83 centers &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-wrap">
+  <div class="layout-grid">
+
+    <div>
+      <div id="formView">
+        <div class="path-select-panel" id="pathSelect">
+          <h2 style="color:var(--navy); margin-bottom:6px;">What are you looking for?</h2>
+          <div class="step-sub" style="margin-bottom:20px;">Choose the kind of stay you're planning.</div>
+          <div class="path-grid">
+            <button class="path-card" onclick="choosePath('ayurveda')">
+              <div class="path-icon"><img src="images/icon_ayurveda.jpg" alt="Ayurveda" style="width:56px;height:56px;object-fit:contain;"></div>
+              <div class="path-title">Ayurveda Treatment &amp; Wellness</div>
+              <div class="path-desc">Medical treatment, spa &amp; rejuvenation &mdash; matched by condition and dosha</div>
+            </button>
+            <button class="path-card" onclick="choosePath('spiritual')">
+              <div class="path-icon"><img src="images/icon_spiritual.jpg" alt="Meditation" style="width:56px;height:56px;object-fit:contain;"></div>
+              <div class="path-title">Meditation &amp; Spiritual Retreat</div>
+              <div class="path-desc">Vipassana courses, forest monasteries &amp; guided meditation</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="progress-wrap" id="progressWrap" style="display:none;">
+          <div class="progress-step active" id="ps1">1</div>
+          <div class="progress-line"></div>
+          <div class="progress-step" id="ps2">2</div>
+          <div class="progress-line"></div>
+          <div class="progress-step" id="ps3">3</div>
+        </div>
+
+        <div class="panel" id="wizardPanel" style="display:none;">
+          <div class="step-view active" id="step1">
+            <div class="path-badge" id="pathBadge" onclick="backToPathSelect()">&#127807; Ayurveda Treatment &amp; Wellness &middot; change</div>
+            <h2 id="step1Heading">Your Health Profile</h2>
+            <div class="step-sub" id="step1Sub">Tell us why you're seeking treatment.</div>
+            <div class="field"><label id="conditionLabel">Presenting condition / reason for visit</label>
+              <select id="condition"></select>
+            </div>
+            <div class="row2">
+              <div class="field"><label>Age</label><input type="number" id="age" value="45" min="18" max="90"></div>
+              <div class="field"><label>Gender</label><select id="gender"><option>F</option><option>M</option></select></div>
+            </div>
+            <div class="companion-toggle" id="companionToggle" onclick="toggleCompanion()">&#128101; Traveling with someone joining too? Add what they're looking for</div>
+            <div class="field" id="companionField" style="display:none;">
+              <label>Travel companion's condition</label>
+              <select id="companionCondition"></select>
+            </div>
+            <div class="btn-row"><button class="primary" onclick="goStep(2)">Continue</button></div>
+          </div>
+
+          <div class="step-view" id="step2">
+            <h2 id="step2Heading">Your Constitution</h2>
+            <div class="step-sub" id="step2Sub">Just tap the answer that sounds most like you &mdash; takes 30 seconds.</div>
+
+            <div class="quiz-q">
+              <label>How do you usually sleep?</label>
+              <div class="choice-grid" data-q="sleep">
+                <button class="choice-card selected" data-val="Light/disturbed sleep" onclick="pickChoice('sleep', this)">Light sleeper, wake up easily</button>
+                <button class="choice-card" data-val="Moderate sleep, wakes if hot" onclick="pickChoice('sleep', this)">Sleep okay, but get warm at night</button>
+                <button class="choice-card" data-val="Deep/heavy sleep" onclick="pickChoice('sleep', this)">Deep, heavy sleeper</button>
+              </div>
+            </div>
+
+            <div class="quiz-q">
+              <label>How's your appetite?</label>
+              <div class="choice-grid" data-q="appetite">
+                <button class="choice-card selected" data-val="Variable appetite" onclick="pickChoice('appetite', this)">Varies a lot day to day</button>
+                <button class="choice-card" data-val="Strong/sharp appetite" onclick="pickChoice('appetite', this)">Get hungry/irritable if I skip meals</button>
+                <button class="choice-card" data-val="Slow digestion" onclick="pickChoice('appetite', this)">Steady, can skip meals easily</button>
+              </div>
+            </div>
+
+            <div class="quiz-q">
+              <label>Temperature preference?</label>
+              <div class="choice-grid" data-q="sensitivity">
+                <button class="choice-card selected" data-val="Sensitive to cold" onclick="pickChoice('sensitivity', this)">I feel the cold easily</button>
+                <button class="choice-card" data-val="Sensitive to heat" onclick="pickChoice('sensitivity', this)">I feel the heat easily</button>
+                <button class="choice-card" data-val="Tolerates temperature well" onclick="pickChoice('sensitivity', this)">Doesn't bother me much</button>
+              </div>
+            </div>
+
+            <div class="quiz-q">
+              <label>Under stress, you tend to...</label>
+              <div class="choice-grid" data-q="emotion">
+                <button class="choice-card selected" data-val="Anxious, overthinking" onclick="pickChoice('emotion', this)">Worry or overthink</button>
+                <button class="choice-card" data-val="Irritable when unwell" onclick="pickChoice('emotion', this)">Get irritable or impatient</button>
+                <button class="choice-card" data-val="Calm but sluggish" onclick="pickChoice('emotion', this)">Stay calm, need a push to act</button>
+              </div>
+            </div>
+
+            <div class="btn-row">
+              <button class="secondary" onclick="goStep(1)">Back</button>
+              <button class="primary" onclick="goStep(3)">Continue</button>
+            </div>
+          </div>
+
+          <div class="step-view" id="step3">
+            <h2>Trip Preferences</h2>
+            <div class="step-sub">One last thing before we find your match.</div>
+            <div class="field"><label>Budget tier</label>
+              <select id="budget"><option>Budget</option><option selected>Mid</option><option>Premium</option></select>
+            </div>
+            <div class="btn-row">
+              <button class="secondary" onclick="goStep(2)">Back</button>
+              <button class="primary" id="findMatchBtn" onclick="runMatch()">Find My Match</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resultsWrap"></div>
+      <div id="detailView"></div>
+      <div id="browseView"></div>
+      <div id="mapView"></div>
+      <div id="costView"></div>
+      <div id="languageView"></div>
+      <div id="scenarioView"></div>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="js/app.js"></script>
+</body>
+</html>
