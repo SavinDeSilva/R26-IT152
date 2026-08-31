@@ -1,0 +1,113 @@
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #12241c;
+}
+
+.tc-site:has(.ld-subnav) {
+  background-color: transparent;
+  isolation: isolate;
+}
+
+.tc-site:has(.ld-subnav)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(10, 28, 22, 0.38) 0%, rgba(10, 28, 22, 0.22) 48%, rgba(10, 28, 22, 0.42) 100%),
+    url('/Sri-Lanka-tourism.jpg') center / cover no-repeat;
+}
+
+.ld-app-shell,
+.ld-app-shell > div {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+  min-height: 100%;
+}
+
+.ld-read-panel {
+  background: rgba(255, 252, 248, 0.94);
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 20px;
+  padding: 36px 32px 28px;
+  box-shadow: 0 18px 42px rgba(8, 24, 20, 0.22);
+  color: #0d2c30;
+}
+
+.ld-read-panel--tight {
+  padding: 16px 22px;
+  border-radius: 14px;
+}
+
+.ld-ghost-btn {
+  background: #ffffff !important;
+  color: #0d2c30 !important;
+  border: 1px solid #0a4a52 !important;
+}
+
+.ld-ghost-btn:hover {
+  background: #eef7f6 !important;
+}
+
+@media (max-width: 640px) {
+  .ld-read-panel {
+    padding: 24px 18px 20px;
+    border-radius: 16px;
+  }
+}
+
+.ld-subnav {
+  background: #083c42;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(10, 74, 82, 0.18);
+}
+
+.ld-subnav-inner {
+  display: flex;
+  gap: 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.ld-subtab {
+  flex: 0 0 auto;
+  padding: 0.85rem 1rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ld-subtab:hover {
+  color: var(--sand, #e8d5a3);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.ld-subtab.is-active {
+  color: #fff;
+  border-bottom-color: var(--teal, #2eb8c4);
+  background: rgba(46, 184, 196, 0.22);
+}
+
+@media (max-width: 640px) {
+  .ld-subtab {
+    padding: 0.75rem 0.8rem;
+    font-size: 0.72rem;
+  }
+}

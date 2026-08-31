@@ -29,3 +29,7 @@ Thumbs.db
 
 # Local backup of nested git metadata
 _backup/
+
+*.pkl
+venv/
+.ipynb_checkpoints/

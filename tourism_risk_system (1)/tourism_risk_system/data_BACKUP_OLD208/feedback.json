@@ -1,0 +1,39 @@
+[
+  {
+    "site_id": 1,
+    "date": null,
+    "actual_crowd_level": null,
+    "rating": null,
+    "comment": "test from terminal",
+    "submitted_at": "2026-07-22 14:15:13"
+  },
+  {
+    "site_id": 1,
+    "date": "2026-07-22",
+    "actual_crowd_level": 3,
+    "rating": 1,
+    "comment": "test after fix",
+    "submitted_at": "2026-07-22 14:21:39",
+    "db_error": "connection to server at \"localhost\" (::1), port 5432 failed: FATAL:  password authentication failed for user \"postgres\"\n"
+  },
+  {
+    "site_id": 172,
+    "date": "2026-08-24",
+    "time": "04:00",
+    "actual_crowd_level": 3,
+    "rating": 1,
+    "comment": "",
+    "submitted_at": "2026-08-24 12:33:26",
+    "db_error": "insert or update on table \"feedback\" violates foreign key constraint \"feedback_site_id_fkey\"\nDETAIL:  Key (site_id)=(172) is not present in table \"sites\".\n"
+  },
+  {
+    "site_id": 63,
+    "date": "2026-08-24",
+    "time": "17:00",
+    "actual_crowd_level": 1,
+    "rating": 2,
+    "comment": "",
+    "submitted_at": "2026-08-24 12:38:59",
+    "db_error": "insert or update on table \"feedback\" violates foreign key constraint \"feedback_site_id_fkey\"\nDETAIL:  Key (site_id)=(63) is not present in table \"sites\".\n"
+  }
+]
