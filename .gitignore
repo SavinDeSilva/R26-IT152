@@ -1,29 +1,7 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
+node_modules/
+.env
 venv/
-**/.env
-*.log
-*.db
-
-# Node
-**/node_modules/
-**/dist/
-
-# Uploads / secrets
-backend/uploads/photos/*
-backend/uploads/docs/*
-backend/uploads/chat/**
-!backend/uploads/**/.gitkeep
-
-# IDE / OS
-.idea/
-.vscode/
-.DS_Store
-Thumbs.db
-
-# Local backup of nested git metadata
-_backup/
-
+__pycache__/
+*.pyc
+dist/
+build/
