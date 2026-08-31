@@ -217,15 +217,6 @@ def create_app(config_class=None):
                     db.session.execute(text(stmt))
                 if alters:
                     db.session.commit()
-            from app.sos_schema_migrations import apply_sos_schema_migrations
-
-            apply_sos_schema_migrations(db)
-            from app.itinerary_schema_migrations import apply_itinerary_schema_migrations
-
-            apply_itinerary_schema_migrations(db)
-            from app.police_login_sync import ensure_police_logins
-
-            ensure_police_logins(db)
         except Exception:
             flask_app.logger.exception("Could not ensure optional schema columns")
 

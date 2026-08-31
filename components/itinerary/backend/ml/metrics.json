@@ -1,0 +1,87 @@
+{
+  "dataset": {
+    "n_attractions": 349,
+    "features": "TF-IDF unigrams+bigrams of name, category, destination, details",
+    "label_mood": "catalogue mood_tag (supervised)",
+    "label_time": "weak labels: mood_tag mapped to morning/afternoon/evening",
+    "mood_not_used_as_feature": true
+  },
+  "mood_classifier": {
+    "task": "Predict attraction mood from text",
+    "chosen_model": "RandomForestClassifier",
+    "baseline": {
+      "name": "DummyClassifier(most_frequent)",
+      "accuracy": 0.3714,
+      "macro_f1": 0.0677
+    },
+    "holdout": {
+      "n_train": 279,
+      "n_test": 70,
+      "accuracy": 0.6286,
+      "macro_f1": 0.3333
+    },
+    "candidates": [
+      {
+        "name": "RandomForestClassifier",
+        "accuracy": 0.6286,
+        "macro_f1": 0.3333
+      },
+      {
+        "name": "LogisticRegression",
+        "accuracy": 0.5857,
+        "macro_f1": 0.3087
+      }
+    ]
+  },
+  "time_classifier": {
+    "task": "Predict visit window (morning / afternoon / evening)",
+    "chosen_model": "RandomForestClassifier",
+    "baseline": {
+      "name": "DummyClassifier(most_frequent)",
+      "accuracy": 0.4429,
+      "macro_f1": 0.2046
+    },
+    "holdout": {
+      "n_train": 279,
+      "n_test": 70,
+      "accuracy": 0.7571,
+      "macro_f1": 0.7184
+    },
+    "candidates": [
+      {
+        "name": "RandomForestClassifier",
+        "accuracy": 0.7571,
+        "macro_f1": 0.7184
+      },
+      {
+        "name": "LogisticRegression",
+        "accuracy": 0.7571,
+        "macro_f1": 0.7
+      }
+    ],
+    "label_map": {
+      "Spiritual": "morning",
+      "Adventure": "morning",
+      "Excited": "morning",
+      "Explore": "afternoon",
+      "Curious": "afternoon",
+      "Happy": "afternoon",
+      "Authentic": "afternoon",
+      "Healing": "evening",
+      "Peaceful": "evening",
+      "Relaxed": "evening"
+    }
+  },
+  "ranking": {
+    "k": 5,
+    "relevance": "same destination or same mood_tag",
+    "n_queries": 347,
+    "precision_at_k": 0.7187,
+    "random_precision_at_k": 0.2899
+  },
+  "validity": {
+    "split": "stratified 80/20 hold-out",
+    "random_state": 42,
+    "vectorizer_fit": "training fold only during evaluation; refit on full catalogue for serving"
+  }
+}
