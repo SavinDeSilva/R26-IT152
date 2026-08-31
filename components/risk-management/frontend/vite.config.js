@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const frontendRoot = path.resolve(dir, '../../shared/frontend');
-const unifiedRoot = path.resolve(dir, '../tourism-unified');
+const unifiedRoot = path.resolve(dir, '../../../tourism-unified');
 const unifiedSrc = path.resolve(unifiedRoot, 'src');
 
 export default defineConfig({

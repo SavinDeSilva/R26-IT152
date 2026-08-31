@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 _RISK_ROOT = (
-    Path(__file__).resolve().parents[1]
+    Path(__file__).resolve().parents[3]
     / "tourism_risk_system (1)"
     / "tourism_risk_system"
 )
