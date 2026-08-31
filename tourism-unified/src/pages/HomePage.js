@@ -115,7 +115,7 @@ function MagneticText({ children, className = '', style = {}, intensity = 0.3 })
     const distY = e.clientY - centerY;
     const distance = Math.sqrt(distX * distX + distY * distY);
     const maxDist = 150;
-    
+
     if (distance < maxDist) {
       const force = (1 - distance / maxDist) * intensity;
       setOffset({ x: distX * force, y: distY * force });
@@ -1310,7 +1310,7 @@ export default function HomePage({ onNavigate }) {
         </div>
       </div>
 
-      
+
 
       {/* ── FOOTER ── */}
       <footer
@@ -1366,7 +1366,7 @@ export default function HomePage({ onNavigate }) {
                 letterSpacing: '0.05em',
               }}
             >
-              
+
             </span>
           </div>
         </div>
