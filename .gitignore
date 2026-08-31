@@ -7,16 +7,19 @@ venv/
 **/.env
 *.log
 *.db
+*.joblib
+
+# Node
 
 # Node
 **/node_modules/
 **/dist/
 
 # Uploads / secrets
-backend/uploads/photos/*
-backend/uploads/docs/*
-backend/uploads/chat/**
-!backend/uploads/**/.gitkeep
+components/shared/backend/uploads/photos/*
+components/shared/backend/uploads/docs/*
+components/shared/backend/uploads/chat/**
+!components/shared/backend/uploads/**/.gitkeep
 
 # IDE / OS
 .idea/
@@ -26,4 +29,3 @@ Thumbs.db
 
 # Local backup of nested git metadata
 _backup/
-
