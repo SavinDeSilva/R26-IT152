@@ -1,0 +1,9 @@
+.env
+data/*
+!data/tourist_sites.csv
+models/
+outputs/
+*.pkl
+
+frontend/public/images/
+frontend/public/*.png
