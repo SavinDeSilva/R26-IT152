@@ -1,0 +1,109 @@
+{
+  "model_version": "v3.0-pipeline",
+  "training_timestamp": "2026-08-23T22:38:35.172451",
+  "python_version": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "sklearn_version": "1.8.0",
+  "pandas_version": "2.2.2",
+  "numpy_version": "1.26.4",
+  "source_dataset": "master_dataset.csv",
+  "source_dataset_records": 152048,
+  "feature_list_raw": [
+    "day_of_week",
+    "month",
+    "is_weekend",
+    "is_public_holiday",
+    "is_festival_period",
+    "avg_temperature_c",
+    "avg_rainfall_mm",
+    "daily_flights_at_cmb",
+    "hotel_occupancy_rate",
+    "capacity_per_day",
+    "is_eco_friendly",
+    "is_unesco",
+    "entrance_fee_lkr",
+    "category",
+    "season",
+    "district"
+  ],
+  "numeric_features": [
+    "day_of_week",
+    "month",
+    "is_weekend",
+    "is_public_holiday",
+    "is_festival_period",
+    "avg_temperature_c",
+    "avg_rainfall_mm",
+    "daily_flights_at_cmb",
+    "hotel_occupancy_rate",
+    "capacity_per_day",
+    "is_eco_friendly",
+    "is_unesco",
+    "entrance_fee_lkr"
+  ],
+  "categorical_features_onehot": [
+    "category",
+    "season",
+    "district"
+  ],
+  "transformed_feature_count": 45,
+  "target_definition": {
+    "crowd_score_normalized": "SYNTHETIC. Formula: (annual_visitors/365 * season_mult * weekend_mult * holiday_mult * noise) / capacity_per_day, clipped to [0,1]. See simulate_crowd_data.py. Not an observed real-world value.",
+    "risk_level": "Threshold of crowd_score_normalized (>=0.75 High, >=0.45 Medium, else Low)."
+  },
+  "target_leakage_note": "is_weekend, is_public_holiday, season, and capacity_per_day are direct ingredients of the crowd_score_normalized generating formula and are also model features. hotel_occupancy_rate and daily_flights_at_cmb are independently generated from the same season_mult/is_weekend/is_holiday drivers with small added noise and act as secondary leakage channels. Random-split metrics below are inflated by this; site_holdout_evaluation is the metric that should be reported.",
+  "encoding_note": "Switched from LabelEncoder to OneHotEncoder(handle_unknown='ignore') for category/season/district. Verified on this data that LabelEncoder's arbitrary integer ordering caused site-holdout R2 to swing between 0.68 and 0.91 for otherwise-identical models; OneHotEncoder gives a stable ~0.87-0.89 regardless of category ordering, and safely handles an unseen category/district at inference instead of silently mapping it to 0.",
+  "best_hyperparameters": {
+    "max_depth": 12,
+    "min_samples_split": 5,
+    "n_estimators": 150
+  },
+  "primary_reported_metric": "site_holdout",
+  "site_holdout_evaluation": {
+    "description": "Entire sites held out of training. Tests generalization to unseen destinations.",
+    "train_sites": 198,
+    "test_sites": 10,
+    "held_out_site_names": [
+      "Bentota Beach",
+      "Bundala National Park",
+      "Colombo Lotus Tower",
+      "Kalpitiya Beach",
+      "Kande Viharaya",
+      "Kandy Lake",
+      "Minneriya National Park",
+      "Pasikuda Beach",
+      "Tangalle Beach",
+      "Wilpattu National Park"
+    ],
+    "train_records": 144738,
+    "test_records": 7310,
+    "regression_mae": 0.1502,
+    "regression_r2": 0.2218,
+    "regression_baseline_mae": 0.2856,
+    "classification_accuracy": 0.7785,
+    "classification_balanced_accuracy": 0.6125
+  },
+  "random_split_evaluation": {
+    "description": "Random 80/20 row split. Same sites appear in train and test - inflated by site-level memorization AND target-formula leakage. Do not report as primary metric.",
+    "train_records": 121638,
+    "test_records": 30410,
+    "regression_mae": 0.0628,
+    "regression_r2": 0.8686,
+    "regression_train_mae": 0.061,
+    "regression_train_r2": 0.8761,
+    "classification_train_accuracy": 0.7972,
+    "classification_test_accuracy": 0.7884,
+    "classification_test_balanced_accuracy": 0.7988,
+    "baseline_mae": 0.1966,
+    "baseline_r2": -0.0,
+    "cv_mae": 0.0654,
+    "cv_mae_std": 0.0089,
+    "cv_r2": 0.8371,
+    "cv_r2_std": 0.0215
+  },
+  "risk_classes": [
+    "High",
+    "Low",
+    "Medium"
+  ]
+}

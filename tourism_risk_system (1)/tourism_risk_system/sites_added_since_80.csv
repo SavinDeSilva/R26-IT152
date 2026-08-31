@@ -1,0 +1,129 @@
+site_id,site_name,district,category
+81,Gal Oya National Park,Ampara,Nature
+82,Meemure,Kandy,Attraction
+83,Maduwanwela Walawwa,Ratnapura,Heritage
+84,Wolvendaal Church,Colombo,Religious
+85,Henarathgoda Botanical Garden,Gampaha,Nature
+86,Yapahuwa Rock Fortress,Kurunegala,Heritage
+87,Rajagala,Ampara,Attraction
+88,Dehiwala Zoo,Colombo,Nature
+89,Aukana,Anuradhapura,Attraction
+90,Asupini Ella,Badulla,Nature
+91,Dolukanda rajamaha viharaya,Kurunegala,Religious
+92,Kelaniya Raja Maha Viharaya,Gampaha,Religious
+93,Buduruwagala Temple,Monaragala,Religious
+94,Abhayagiri Monastery,Anuradhapura,Heritage
+95,Jetavanaramaya,Anuradhapura,Attraction
+96,Kanneliya Rainforest,Galle,Nature
+97,Hikkaduwa National Park,Galle,Nature
+98,Victoria Park,Nuwara Eliya,Nature
+99,Ridee Viharaya,Kurunegala,Religious
+100,Nilavara Bottomless Well,Jaffna,Nature
+101,Traditional Village (Ape Gama),Colombo,Heritage
+102,Point Pedro,Jaffna,Nature
+103,Lionel Wendt Art Centre,Colombo,Heritage
+104,Negombo,Gampaha,Beach
+105,Colombo Lighthouse,Colombo,Heritage
+106,Bellanwila Temple (Bellanwila Rajamaha Viharaya),Colombo,Religious
+107,Ancient Veheragala of Pulukunawa,Ampara,Heritage
+108,Koggala Beach,Galle,Beach
+109,The Nagapooshani Amman Kovil,Jaffna,Religious
+110,Sangamankanda Point,Ampara,Nature
+111,Dowa Rock Temple,Badulla,Religious
+112,St. Clair's Falls,Nuwara Eliya,Nature
+113,Baron's Cap or Thoppigala,Batticaloa,Heritage
+114,The Steaming Hot Water Wells of Mahaoya,Ampara,Nature
+115,Delft Wild Horses,Jaffna,Nature
+116,Colombo Gold Center,Colombo,Heritage
+117,Wadinagala,Ampara,Nature
+118,Samangala Forest Hermitage,Ampara,Religious
+119,Little Adam's Peak,Badulla,Nature
+120,Okanda Devalaya (A Destination of Mass Pilgrimage),Ampara,Religious
+121,The Japanese Peace Pagoda,Galle,Religious
+122,Rambodagalla Buddha Statue,Kurunegala,Religious
+123,Piyangala Forest Hermitage,Ampara,Religious
+124,Delft Baobab Tree,Jaffna,Nature
+125,Angurukaramulla Temple,Gampaha,Religious
+126,Sri Pada (Adam's Peak),Ratnapura,Religious
+127,Kalutara Bodhiya,Kalutara,Religious
+128,Seema Malakaya Meditation Centre,Colombo,Religious
+129,Independence Memorial Hall,Colombo,Heritage
+130,Ancient Deegawapiya,Ampara,Religious
+131,Kosgoda,Galle,Beach
+132,Wasgamuwa National Park,Matale,Nature
+133,Laxapana Falls,Nuwara Eliya,Nature
+134,Diva Guhawa - Batatota Lena,Ratnapura,Heritage
+135,Bahirawa Kanda,Kandy,Religious
+136,Diyatha Uyana,Colombo,Nature
+137,Richmond Castle,Kalutara,Heritage
+138,Muhudu Maha Viharaya,Ampara,Religious
+139,Arcade Independence Square,Colombo,Heritage
+140,Beira Lake,Colombo,Nature
+141,Rambakan Oya,Ampara,Nature
+142,Tomb of King Vijay,Kurunegala,Heritage
+143,Senanayaka Samudraya of Inginiyagala,Ampara,Nature
+144,Sri Dalada Maligawa (Temple of the Tooth),Kandy,Religious
+145,Delft Growing Stone,Jaffna,Nature
+146,Attanagalla Raja Maha Viharava,Gampaha,Religious
+147,Jungle Beach,Galle,Beach
+148,Kudumbigala Monastery,Ampara,Religious
+149,Kumana National Park,Ampara,Nature
+150,Devon Falls,Nuwara Eliya,Nature
+151,Dambakola Patuna Viharaya,Jaffna,Religious
+152,Gregory Lake,Nuwara Eliya,Nature
+153,Attidiya Bird Sanctuary,Colombo,Nature
+154,Batadombalena,Ratnapura,Heritage
+155,Beddagana Wetland Park,Colombo,Nature
+156,Birds Research Center Hambantota,Hambantota,Nature
+157,Bogoda Raja Maha Viharaya,Badulla,Religious
+158,Bomburu Ella Waterfall,Nuwara Eliya,Nature
+159,Bopath Falls,Ratnapura,Nature
+160,Colombo Port Maritime Museum,Colombo,Heritage
+161,Crow Island Beach Park,Colombo,Beach
+162,Delgamuwa Rajamaha Viharaya,Ratnapura,Religious
+163,"Dry Zone Botanic Gardens, Hambantota",Hambantota,Nature
+164,Dunhinda Waterfall Access Point,Badulla,Nature
+165,Dutch Museum,Colombo,Heritage
+166,Dutch Reformed Church,Galle,Religious
+167,Galle Dutch Fort,Galle,Heritage
+168,Galle Face Park & Beach,Colombo,Beach
+169,Gampaha Botanical Garden,Gampaha,Nature
+170,Gartmore Falls,Nuwara Eliya,Nature
+171,Hiriketiya Beach,Matara,Beach
+172,Horagolla National Park,Gampaha,Nature
+173,Hunnasgiriya Water Falls,Matale,Nature
+174,Jodu Ella Water Falls,Matale,Nature
+175,Kathiresan Pillayar Kovil,Colombo,Religious
+176,Kirala Kele Sanctuary,Matara,Nature
+177,Kurundu Oya Ella Falls,Nuwara Eliya,Nature
+178,Galle Lighthouse,Galle,Heritage
+179,Lover's Leap Waterfall,Nuwara Eliya,Nature
+180,Madiha Beach,Matara,Beach
+181,Madunagala Hot Water Spring,Hambantota,Nature
+182,Maritime Museum,Galle,Heritage
+183,Maruthamunai Beach,Ampara,Beach
+184,Matara Fort,Matara,Heritage
+185,Moon Plains,Nuwara Eliya,Nature
+186,Muthiyangana Raja Maha Vihara,Badulla,Religious
+187,Narangala Hill,Badulla,Nature
+188,National Art Gallery,Colombo,Heritage
+189,National Museum Galle,Galle,Heritage
+190,Old Dutch Market,Matara,Heritage
+191,Old Parliament Building,Colombo,Heritage
+192,Parewi Duwa Temple,Matara,Religious
+193,Parrot Rock,Matara,Nature
+194,Pettah Floating Market,Colombo,Heritage
+195,"Pitawala Pathana, Riverston",Matale,Nature
+196,Porawagala Viewpoint,Badulla,Nature
+197,Prabhawa Mountain Day Viewpoint,Badulla,Nature
+198,Rathnapura National Museum,Ratnapura,Heritage
+199,Ravan Ella Waterfall,Badulla,Nature
+200,Ravana's Cave,Badulla,Heritage
+201,Rekawa Turtle Beach,Hambantota,Nature
+202,Ridiyagama Safari Park,Hambantota,Nature
+203,Riverston,Matale,Nature
+204,Sembuwatta Lake,Matale,Nature
+205,Sera Ella Water Falls,Matale,Nature
+206,Shanthipura View Point,Nuwara Eliya,Nature
+207,Single Tree Hill,Nuwara Eliya,Nature
+208,SK Town Beach,Matara,Beach
