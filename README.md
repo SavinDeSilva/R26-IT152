@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="Screenshot (2328)" src="https://github.com/user-attachments/assets/ed8eb84e-012b-4be2-a604-0a710fc3b304" />
 <!-- README-R26-IT-152-v2 -->
 # Tour Ceylon - SafeJourney AI (R26-IT-152)
 
